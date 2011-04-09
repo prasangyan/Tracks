@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Tracks Manual :: Introduction </title>
+<meta name="author" content="<%= @page.author %>" />
+
+<!--- Blueprint CSS Framework -->
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+
+<!-- Ultraviolet syntax highlighting CSS -->
+<link rel="stylesheet" href="css/syntax.css" type="text/css" />
+
+<!-- Custom CSS for screen and PDF -->
+<link rel="stylesheet" href="css/site.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/printed-pdf.css" type="text/css" media="print" />
+<body>
+
+<div class="container">
+
+   <div class="column span-24 first last" id="header">
+     <h1><img src="assets/tracks-logo.png" /></h1>
+
+     <div id="navcontainer">
+       <ul id="navlist">
+         <li><a href="http://getontracks.org/">Home</a></li>
+         <li><a href="http://getontracks.org/news/index">News</a></li>
+         <li><a href="http://getontracks.org/articles/index">Articles</a></li>
+         <li><a href="http://getontracks.org/doc/index.html">Manual</a></li>
+         <li><a href="http://getontracks.org/downloads/index">Downloads</a></li>
+         <li><a href="http://getontracks.org/development/index">Development</a></li>
+         <li><a href="http://getontracks.org/screenshots/index">Screenshots</a></li>
+       </ul>
+      </div>
+   </div>
+
+   <div class="column span-15 append-1 first">
+        <div id="toc" class="box">
+       <ul>
+         
+           <li><a href='index.html' class="current">Introduction</a></li>
+         
+         
+           <li><a href='installation.html'>Installation</a></li>
+         
+         
+            <li><a href='upgrading.html'>Upgrading</a></li>
+         
+       </ul>
+     </div>
+      <h2>Introduction</h2>
+<p>Tracks is a web application that is specifically designed to implement the Getting Things Done &trade; (<span class="caps">GTD</span>) methods. That doesn&#8217;t mean that you can&#8217;t use it for other kinds of todo tracking. Data is stored in a database (either MySQL, Postgresql or SQLite), and viewed in a web browser via a web server (Apache, Lighttpd or Mongrel among others). This makes it cross-platform as well as being accessible from anywhere that you have web access.</p>
+<p>Using the <span class="caps">GTD</span> method as a model, there are three main components to Tracks: Next actions, Contexts and Projects.</p>
+<ul>
+	<li><strong>Next Actions</strong>: These are the heart of <span class="caps">GTD</span>. They are the very next physical action that can be taken on something. It&#8217;s best to phrase these in an active way e.g. &#8220;Call Bob about the committee meeting&#8221; or &#8220;Search for a reputable garage&#8221;.</li>
+	<li><strong>Contexts</strong>: Contexts are very flexible, and can be places, states of mind or modes of working in which actions can be taken. Next actions can be assigned to and sorted by context so that you know when you are able to make progress with items. e.g. &#8220;Library&#8221;, &#8220;Shops&#8221; or &#8220;Tired&#8221;.</li>
+	<li><strong>Projects</strong>: any goal which requires more than one next action to take it to completion is a Project. In Tracks, you can view your next actions by Project.</li>
+</ul>
+<p>Tracks has been thoroughly beta tested by a large number of people, and should be fully stable for everyday use. However, once set up, Tracks will contain the majority of your plans for your work and personal life, so it&#8217;s only sensible to make sure that you have frequent, reliable backups of your data. Full changenotes on the release can be found in <code>doc/CHANGELOG</code>. Full <span class="caps">API</span> documentation can be found at <code>doc/app/index.html</code>, once you have run <code>rake appdoc</code>.</p>
+<h3>About this manual</h3>
+<p>The source for this manual is kept in a branch of the main Tracks <a href="http://github.com/bsag/tracks/tree/gh-pages">GitHub repository</a>. The source is maintained using <a href="http://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://pygments.org/">Pygments</a> to create the <span class="caps">HTML</span> (which is automatically published as a GitHub page <a href="http://bsag.github.com/tracks">here</a> when the repository is pushed), and <a href="http://www.princexml.com/">Prince <span class="caps">XML</span></a> is used to convert the <span class="caps">HTML</span> to <span class="caps">PDF</span> using a rakefile. If you have cloned the source and make changes to the text, you can run delete the existing <code>manual.pdf</code> file in the root, then run <code>rake manual.pdf</code> to regenerate the <span class="caps">PDF</span> file.</p>
+   </div>
+
+   <div id="sidebar" class="column span-8 last">
+        <h4>Other resources</h4>
+
+   <div class="box">
+      <p class="last"><a href="http://github.com/bsag/tracks/raw/gh-pages/manual.pdf">Download PDF version of this manual</a></p>
+   </div>
+
+   <h5>Community help</h5>
+     <ul>
+       <li><a href="http://www.getontracks.org/forums/">Forums</a></li>
+       <li><a href="http://www.getontracks.org/wiki/">Wiki</a></li>
+       <li><a href="http://www.getontracks.org/development/index">Get involved with development</a></li>
+       </ul>
+   </div>
+
+   <div id="footer" class="column span-24 first last">
+    <p>Created with <a href="http://github.com/mojombo/jekyll">Jekyll</a></p>
+   </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Headings
+ * --------------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6 { color: <%= @page.color['header'] %>; }
+
+h3 { border-bottom: 1px solid #999; padding-bottom: 3px; }
+
+/* Text Elements
+ * --------------------------------------------------------------------- */
+a                 { color: <%= @page.color['link'] %>; }
+a:hover           { color: <%= @page.color['link-hover'] %>; }
+blockquote        { color: <%= @page.color['blockquote'] %>; }
+
+code { 
+  font-size: 1.1em;
+  color: #000;
+  background-color: <%= @page.color['box-bg'] %>
+}
+
+hr {
+  background: <%= @page.color['highlight'] %>;
+  color:      <%= @page.color['highlight'] %>;
+}
+
+/* Tables
+ * --------------------------------------------------------------------- */
+table {
+  border-top:     1px solid <%= @page.color['border'] %>;
+  border-left:    1px solid <%= @page.color['border'] %>;
+}
+th,td {
+  border-bottom:  1px solid <%= @page.color['border'] %>;
+  border-right:   1px solid <%= @page.color['border'] %>;
+}
+
+/* Default Classes
+ * --------------------------------------------------------------------- */
+p.quiet { color: <%= @page.color['quiet'] %>; }
+.alt    { color: <%= @page.color['alt'] %>; }
+
+p.title {
+  color: #111;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+
+#header h1 img { margin-bottom: 0; }
+
+div#toc ul {list-style-type: none;}
+
+a.current:before { 
+  content: "→ ";
+  color: #000;
+  }
+  
+a.current {
+  color: #000;
+  text-decoration: none;
+}
+
+#footer { 
+  text-align: center;
+  border-top: 1px solid <%= @page.color['quiet'] %>;
+  padding-top: 10px;
+}
+
+#navcontainer ul {
+  padding-left: 0;
+  margin-left: 0;
+  background-color: #7f0c19;
+  color: #fff;
+  float: left;
+  width: 100%;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a {
+  padding: 0.2em 1em;
+  background-color: #7f0c19;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+  border-right: 1px solid #fff;
+}
+
+#navcontainer ul li a:hover {
+  background-color: #44060d;
+  color: #fff;
+}
+/* EOF */

@@ -1,0 +1,10 @@
+*.log
+_site/*.log
+*~
+nbproject
+config
+tmp
+db
+public/javascripts/cache
+public/stylesheets/cache
+rerun.txt

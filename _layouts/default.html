@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Tracks Manual :: {{ page.title }} </title>
+<meta name="author" content="<%= @page.author %>" />
+
+<!--- Blueprint CSS Framework -->
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+
+<!-- Ultraviolet syntax highlighting CSS -->
+<link rel="stylesheet" href="css/syntax.css" type="text/css" />
+
+<!-- Custom CSS for screen and PDF -->
+<link rel="stylesheet" href="css/site.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/printed-pdf.css" type="text/css" media="print" />
+<body>
+
+<div class="container">
+
+   <div class="column span-24 first last" id="header">
+     <h1><img src="assets/tracks-logo.png" /></h1>
+
+     <div id="navcontainer">
+       <ul id="navlist">
+         <li><a href="http://getontracks.org/">Home</a></li>
+         <li><a href="http://getontracks.org/news/index">News</a></li>
+         <li><a href="http://getontracks.org/articles/index">Articles</a></li>
+         <li><a href="http://getontracks.org/doc/index.html">Manual</a></li>
+         <li><a href="http://getontracks.org/downloads/index">Downloads</a></li>
+         <li><a href="http://getontracks.org/development/index">Development</a></li>
+         <li><a href="http://getontracks.org/screenshots/index">Screenshots</a></li>
+       </ul>
+      </div>
+   </div>
+
+   <div class="column span-15 append-1 first">
+        <div id="toc" class="box">
+       <ul>
+         {% if page.title == 'Introduction' %}
+           <li><a href='index.html' class="current">Introduction</a></li>
+         {% else %}
+           <li><a href='index.html'>Introduction</a></li>
+         {% endif %}
+         {% if page.title == 'Installing Tracks' %}
+           <li><a href='installation.html' class="current">Installation</a></li>
+         {% else %}
+           <li><a href='installation.html'>Installation</a></li>
+         {% endif %}
+         {% if page.title == 'Upgrading Tracks' %}
+            <li><a href='upgrading.html' class="current">Upgrading</a></li>
+         {% else %}
+            <li><a href='upgrading.html'>Upgrading</a></li>
+         {% endif %}
+       </ul>
+     </div>
+      {{ content }}
+   </div>
+
+   <div id="sidebar" class="column span-8 last">
+        <h4>Other resources</h4>
+
+   <div class="box">
+      <p class="last"><a href="http://github.com/bsag/tracks/raw/gh-pages/manual.pdf">Download PDF version of this manual</a></p>
+   </div>
+
+   <h5>Community help</h5>
+     <ul>
+       <li><a href="http://www.getontracks.org/forums/">Forums</a></li>
+       <li><a href="http://www.getontracks.org/wiki/">Wiki</a></li>
+       <li><a href="http://www.getontracks.org/development/index">Get involved with development</a></li>
+       </ul>
+   </div>
+
+   <div id="footer" class="column span-24 first last">
+    <p>Created with <a href="http://github.com/mojombo/jekyll">Jekyll</a></p>
+   </div>
+
+</div>
+</body>
+</html>

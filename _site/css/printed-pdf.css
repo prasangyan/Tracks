@@ -1,0 +1,59 @@
+/* Styling for the printed PDF version, constructed using Prince XML
+    http://www.princexml.com/
+*/
+
+@page {
+  size: a4;
+  margin: 2cm;
+
+  @top-left {
+    color: #333;
+    font: 0.8em "Helvetica", sans-serif;
+    content: "Tracks: Doing Things Properly";
+    font-style: italic;
+    }
+
+  @top-right {
+    color: #333;
+    font: 0.8em "Helvetica", sans-serif;
+    content: string(chapter-title);
+    font-style: italic;
+  }
+
+  @bottom {
+    font: 0.8em "Helvetica", sans-serif;
+    content: counter(page)
+    }
+}
+
+/* Don't put headers and footers on first page */
+@page :first {
+  @top-left {
+     content: normal;
+  }
+
+  @top-right {
+    content: normal;
+  }
+
+}
+
+
+title { string-set: doctitle content(); }
+
+/* Put value of h2 in string(chapter-title) for display in header */
+h2 { string-set: chapter-title content() }
+
+a:link, a:visited { text-decoration: none; }
+
+ol.toc { font-size: 1.1em; }
+
+/* Don't show sidebar or footer in printed version */
+#sidebar, #footer, #header, #toc, #navcontainer {
+  display: none;
+}
+
+#title {
+  display: block;
+  width: 80%;
+  }
