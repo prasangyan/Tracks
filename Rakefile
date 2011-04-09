@@ -1,12 +1,16 @@
-require 'rubygems'
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-# This requires you to have PrinceXML installed
-# The rake task regenerates
-# the site with Jekyll, then builds a new manual.pdf
-# Delete the old manual.pdf first before running the task
-desc "Generate printed manual as manual.pdf"
-file 'manual.pdf' => '_site' do |task|
-  sh 'jekyll'
-  pages = File.read('_site/printed.html').scan(/<li><a href=['"]([^'"]+)/).flatten.map { |f| "_site/#{f}" }
-  sh 'prince', '--input=html', '--style=_site/css/printed-pdf.css', '--no-network', '--log=prince_errors.log', "--output=#{task.name}", '_site/printed.html', *pages
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+begin
+  require 'test/rails/rake_tasks'
+rescue LoadError => e
+  #It's ok if you don't have ZenTest installed if you're not a developer
 end

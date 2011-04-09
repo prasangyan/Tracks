@@ -1,0 +1,25 @@
+<% project = project_settings -%>
+<div id="<%= dom_id(project) %>" class="project">
+  <div class="project_settings">This project
+    <% if project.completed? -%>has been marked as completed
+    <% elsif project.hidden? -%>has been marked as hidden
+    <% else -%>is active
+    <% end -%>
+    with <% if project.default_context.nil? -%>
+      no default context
+    <% else -%>
+      a default context of <%= project.default_context.name -%>
+    <% end -%>
+    and with <% if project.default_tags.nil? || project.default_tags.blank? -%>
+      no default tags.
+    <% else -%>
+      '<%= project.default_tags -%>' as the default tags.
+    <% end -%>
+    <%= link_to_edit_project(project, "Edit Project Settings") %>
+  </div>
+  <% unless project.description.blank? -%>
+    <div class="project_description"><%= format_note(project.description) %></div>
+  <% end -%>
+</div>
+<div id="<%= dom_id(project, 'edit') %>" class="edit-form" style="display:none;">
+</div>
